@@ -1,9 +1,61 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home(),
+  // home: Home(),
+  home: FlexHome()
 
 ));
+
+
+
+class FlexHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('flex layout'),
+        centerTitle: true,
+        toolbarHeight: 20.0,
+      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+              flex: 3,
+              child: Image.asset('assets/image1.jpg'),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              color: Colors.indigoAccent,
+              child: Text("1"),
+
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              color: Colors.pink,
+              child: Text("2"),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              color: Colors.yellow,
+              child: Text("3"),
+            ),
+          ),
+        ],
+      ),
+
+
+    );
+  }
+}
+
 
 class Home extends StatelessWidget {
   @override
